@@ -53,3 +53,5 @@ In the steps below, we will start by forking the official CasaOS AppStore.
 
 
 ## 3-Party AppStores
+
+# I'm no developer. Just an old man getting a grasp of tech. I just follow youtube videos.
