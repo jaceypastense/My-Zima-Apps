@@ -1,4 +1,5 @@
 ################################### QBITTORRENT STACK ###################################
+  name: noobs-qbittorrent
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
