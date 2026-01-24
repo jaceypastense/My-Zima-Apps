@@ -30,14 +30,7 @@ services:
     environment:
       # Specify the VPN service provider.
       - VPN_SERVICE_PROVIDER=custom
-      # Specify the type of VPN.
-      - VPN_TYPE=wireguard
-      # For OpenVPN:
-      # - OPENVPN_USER= # Username for OpenVPN.
-      # - OPENVPN_PASSWORD= # Password for OpenVPN.
-      # For Wireguard (these are commented out, but can be used if Wireguard is the chosen VPN type):
-      # - WIREGUARD_PRIVATE_KEY=wOEI9rqqbDwnN8/Bpp22sVz48T71vJ4fYmFWujulwUU=
-      # - WIREGUARD_ADDRESSES=10.64.222.21/32
+      - VPN_TYPE=wireguard      
       - WIREGUARD_ENDPOINT_IP=
       - WIREGUARD_ENDPOINT_PORT=
       - WIREGUARD_PUBLIC_KEY=
@@ -45,7 +38,7 @@ services:
       - WIREGUARD_PRESHARED_KEY=
       - WIREGUARD_ADDRESSES=10.8.0.5/24
       # Specify the timezone for accurate log timestamps.
-      - TZ=Asia/Singapore
+      - TZ=
       # Define how often the VPN servers list should be updated.
       # For more details, refer to the provided link.
       # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/servers.md#update-the-vpn-servers-list
@@ -61,15 +54,15 @@ services:
         - container: VPN_TYPE
           description:
             en_us: 'Container Variable: VPN_TYPE'
-        - container: OPENVPN_USER
-          description:
-            en_us: 'Container Variable: OPENVPN_USER'
-        - container: OPENVPN_PASSWORD
-          description:
-            en_us: 'Container Variable: OPENVPN_PASSWORD'
-        - container: TZ
-          description:
-            en_us: 'Container Variable: TZ'
+#        - container: OPENVPN_USER
+#          description:
+#            en_us: 'Container Variable: OPENVPN_USER'
+#        - container: OPENVPN_PASSWORD
+#          description:
+#            en_us: 'Container Variable: OPENVPN_PASSWORD'
+#        - container: TZ
+#          description:
+#            en_us: 'Container Variable: TZ'
         - container: UPDATER_PERIOD
           description:
             en_us: 'Container Variable: UPDATER_PERIOD'
