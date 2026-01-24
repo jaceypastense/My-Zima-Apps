@@ -91,32 +91,25 @@ x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
-    - arm64
   # Main service for this application
   main: gluetun
   # Detailed description for the application
   description:
-    en_us: Lightweight swiss-knife-like VPN client to multiple VPN service providers
+    en_us: VPN client for your Arr Stack
   # Brief tagline for the application
   tagline:
     en_us: Gluetun
   # Developer's information
-  developer: portainer
-  # Author of this particular configuration
-  author: BigBearTechWorld
+  developer: QMcGaw
+  
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/gluetun.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
-  # Installation tips
-  tips:
-    before_install:
-      en_us: |
-        You will need to configure the providers in the environment variables. See: [BigBearCasaOS Gluetun Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)
   # Title for the application
   title:
     en_us: Gluetun
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: VPN Tunnel
   # Default port mapping for the application
   port_map: ""
