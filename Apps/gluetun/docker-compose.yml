@@ -27,7 +27,7 @@ services:
       # Specify the timezone for accurate log timestamps.
       - TZ=Asia/Singapore
 
- # CASAOS ENVIRONMENT VARIABLES AND METADATA     
+# CASAOS ENVIRONMENT VARIABLES AND METADATA     
     x-casaos:
       envs:
         - container: VPN_SERVICE_PROVIDER
