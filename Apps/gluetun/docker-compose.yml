@@ -1,0 +1,44 @@
+services:
+  gluetun:
+    x-casaos:
+      envs: []
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8080:8080 # qbittorrent
+      - 6881:6881
+      - 6881:6881/udp
+      - 17000:3000
+      - 17001:3001
+      - 8686:8686 # LIDARR
+      - 9696:9696 # PROWLARR
+
+    devices:
+      -  /dev/net/tun:/dev/net/tun
+    environment:
+      - VPN_SERVICE_PROVIDER=custom
+      - VPN_TYPE=wireguard
+      - WIREGUARD_ENDPOINT_IP=107.173.236.225
+      - WIREGUARD_ENDPOINT_PORT=51822
+      - WIREGUARD_PUBLIC_KEY=swZw5aq3sz69lhhPNb930rMefwsp/5vZiZzhmPvCwks=
+      - WIREGUARD_PRIVATE_KEY=2HGYDOGEr8MdNJCv4pcdjr63HfI+Lm3qXxz8HwhrnWg=
+      - WIREGUARD_PRESHARED_KEY=9xczF8ZHkqQcs6/ZgrQlfbsjFBVTuWhdWTf/Kvduovc=
+      - WIREGUARD_ADDRESSES=10.8.0.5/24
+      - WEBUI_PORT=3080
+#### ZIMAOS ENVIRONMENT
+
+x-casaos:
+  architectures:
+    - amd64
+  main: app
+  description:
+    en_us: Tunnel for Arr Stacks.
+    developer: ''
+  author: NoobCat
+  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/gluetun.png
+  thumbnail: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/gluetun.png
+  title:
+    en_us: Gluetun
+  category: VPN Tunnel
