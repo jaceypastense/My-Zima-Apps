@@ -6,9 +6,13 @@ services:
     ports:
       - 3923:3923
     volumes:
-      - /DATA/AppData/$AppID/copyparty/conf:/cfg/config.conf:ro
-      - /DATA/AppData/$AppID/copyparty/db:/cfg/hists #database files
-      - /DATA/AppData/$AppID/media:/media #files being exposed to copyparty
-#      - /DATA/AppData/$AppID/data:/downloads
-    restart: unless-stopped
-    
+      - /DATA/AppData/$AppID/copyparty/conf:/cfg:z
+      - /DATA/AppData/$AppID/media:/media:z
+ 
+    stop_grace_period: 15s  # thumbnailer is allowed to continue finishing up for 10s after the shutdown signal
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q 127.0.0.1:3923/?reset"]
+      interval: 1m
+      timeout: 2s
+      retries: 5
+      start_period: 15s
