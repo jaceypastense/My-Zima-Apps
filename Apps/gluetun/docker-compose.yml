@@ -1,22 +1,16 @@
 name: noobs-gluetun
-
 services:
-  # Main Portainer Agent Server service configuration
   gluetun:
-    # This configuration is for the 'qmcgaw/gluetun' Docker image, a versatile VPN client in a Docker container.
     image: qmcgaw/gluetun:v3.41.0
-    # Assign a name to this container instance.
     container_name: gluetun
     cap_add:
       - NET_ADMIN # This allows the container to perform network operations.
     devices:
       - /dev/net/tun:/dev/net/tun # Map the TUN device, required for VPNs.
-    # Expose and map specific ports from the container to the host.
     ports:
       - 8888:8888/tcp # HTTP proxy port mapping.
       - 8388:8388/tcp # Shadowsocks TCP port mapping.
       - 8388:8388/udp # Shadowsocks UDP port mapping.
-    # Map volumes from the host to the container.
     volumes:
       - /DATA/AppData/$AppID/data:/gluetun # Map the data directory.
     # Define environment variables for the container.
