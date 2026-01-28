@@ -31,7 +31,7 @@ x-casaos:
   developer: meeb
   
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/tubesync-light.png
+  icon: https://github.com/meeb/tubesync/blob/main/tubesync/common/static/images/tubesync.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
