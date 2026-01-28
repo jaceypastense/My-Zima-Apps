@@ -1,0 +1,47 @@
+name: backrest
+services:
+  backrest:
+    image: garethgeorge/backrest:latest
+    container_name: backrest
+    hostname: backrest
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/cache:/cache
+      - /DATA/AppData/$AppID/tmp:/tmp
+      - /DATA/AppData/$AppID/rclone:/root/.config/rclone # Mount for rclone config (needed when using rclone remotes)
+      - /DATA/AppData/$AppID/userdata:/userdata  # Mount local paths to backup
+      - /DATA/AppData/$AppID/sourcedata:/sourcedata # DATA to backup
+      - /DATA/AppData/$AppID/repo:/repos     # Mount local repos (optional for remote storage)
+
+    environment:
+      - TZ=Asia/Singapore
+    ports:
+      - "9898:9898"
+    restart: unless-stopped
+
+# CASAOS ENVIRONMENT VARIABLES AND METADATA     
+
+
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Main service for this application
+  main: backrest
+  # Detailed description for the application
+  description:
+    en_us: Backrest is a web-accessible backup solution built on top of restic. Backrest provides a WebUI which wraps the restic CLI and makes it easy to create repos, browse snapshots, and restore files. Additionally, Backrest can run in the background and take an opinionated approach to scheduling snapshots and orchestrating repo health operations. 
+
+  developer: Gareth
+  
+  # Icon URL for the application
+  icon: https://github.com/homarr-labs/dashboard-icons/blob/main/png/backrest.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: backrest
+  # Category under which the application falls
+  category: Backup Utility
+  port_map: '9898'
