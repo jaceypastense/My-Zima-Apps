@@ -1,0 +1,40 @@
+services:
+  tubesync:
+    image: ghcr.io/meeb/tubesync:latest
+    container_name: tubesync
+    restart: unless-stopped
+    stop_grace_period: 30m
+    ports:
+      - 4848:4848
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/downloads:/downloads
+    environment:
+      - TZ=Asia/Singapore
+      - PUID=1000
+      - PGID=1000
+
+# CASAOS ENVIRONMENT VARIABLES AND METADATA     
+
+
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Main service for this application
+  main: tubesync
+  # Detailed description for the application
+  description:
+    en_us: TubeSync is a PVR (personal video recorder) for YouTube. Or, like Sonarr but for YouTube (with a built-in download client). It is designed to synchronize channels and playlists from YouTube to local directories and update your media server once media is downloaded. 
+
+  developer: meeb
+  
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/tubesync-light.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: tubesync
+  # Category under which the application falls
+  category: Downloader
