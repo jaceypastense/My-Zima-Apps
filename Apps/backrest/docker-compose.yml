@@ -36,7 +36,7 @@ x-casaos:
   developer: Gareth
   
   # Icon URL for the application
-  icon: https://github.com/homarr-labs/dashboard-icons/blob/main/png/backrest.png
+  icon: https://github.com/garethgeorge/backrest/blob/main/webui/assets/favicon.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
