@@ -20,13 +20,11 @@ services:
 x-casaos:
   architectures:
     - amd64
-    - arm
-    - arm64
   main: app
   description:
     en_us: Web GUI for youtube-dl with playlist support. Allows you to download videos from YouTube and dozens of other sites (https://github.com/alexta69).
-    developer: ''
-  author: WisdomSky
+    developer: alexta69
+  
   icon: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png
   thumbnail: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png
   title:
