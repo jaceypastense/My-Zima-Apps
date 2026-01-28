@@ -18,7 +18,7 @@ x-casaos:
   main: newt
   # Detailed description for the application
   description:
-    en_us: Pangolin Client for Tunneling Selfhosted Apps to VPS
+    en_us: Pangolin Client for Tunneling Selfhosted Apps to VPS.  Pangolin tunneled site & network connector 
 
   developer: Owen & Milo
   
