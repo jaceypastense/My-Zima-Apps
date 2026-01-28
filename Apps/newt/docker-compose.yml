@@ -7,3 +7,27 @@ services:
       - PANGOLIN_ENDPOINT=https://your-pangolin-domain.com
       - NEWT_ID=
       - NEWT_SECRET=
+# CASAOS ENVIRONMENT VARIABLES AND METADATA     
+
+
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Main service for this application
+  main: newt
+  # Detailed description for the application
+  description:
+    en_us: Pangolin Client for Tunneling Selfhosted Apps to VPS
+
+  developer: Owen & Milo
+  
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/pangolin.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Newt
+  # Category under which the application falls
+  category: Tunnel
