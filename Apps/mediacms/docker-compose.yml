@@ -80,3 +80,18 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+
+x-casaos:
+  architectures:
+    - amd64
+  main: app
+  description:
+    en_us: MediaCMS is a modern, fully featured open source video and media CMS. It is developed to meet the needs of modern web platforms for viewing and sharing media. It can be used to build a small to medium video and media portal within minutes.
+    developer: Markos
+  
+  icon: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png
+  thumbnail: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png
+  title:
+    en_us: MediaCMS
+  category: Download Manager
+  port_map: '8018'
