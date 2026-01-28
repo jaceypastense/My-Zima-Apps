@@ -1,4 +1,4 @@
-name: metube
+name: tubesync
 services:
   tubesync:
     image: ghcr.io/meeb/tubesync:latest
