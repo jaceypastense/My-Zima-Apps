@@ -1,16 +1,19 @@
-version: "3.8"
+name: karakeep
  
 services:
   web:
-    image: ghcr.io/karakeep-app/karakeep:0.30.0
+    image: ghcr.io/karakeep-app/karakeep:release
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/data:/data
     ports:
-      - 3180:3000
+      - 3000:3000
     environment:
-      MEILI_ADDR: http://meilisearch:7700
-      BROWSER_WEB_URL: http://chrome:9222
+      - MEILI_ADDR=http://meilisearch:7700
+      - BROWSER_WEB_URL=http://chrome:9222
+      - NEXTAUTH_SECRET=tP7D8lVZcUtXLVEhnkzmnixGXFYs63AoT6zxTVsieC9Qu3tQ
+      - MEILI_MASTER_KEY=XDbKtrYktV9iNjYH2ifdKUwaLgtrYN/VEK77EFbQS4WGQW9S
+      - NEXTAUTH_URL=http://localhost:3000
 
   chrome:
     image: gcr.io/zenika-hub/alpine-chrome:123
@@ -26,8 +29,8 @@ services:
     image: getmeili/meilisearch:v1.13.3
     restart: unless-stopped
     environment:
-      - MEILI_NO_ANALYTICS: "true"
-
+      - MEILI_NO_ANALYTICS=true
+      - MEILI_MASTER_KEY=XDbKtrYktV9iNjYH2ifdKUwaLgtrYN/VEK77EFbQS4WGQW9S
     volumes:
       - /DATA/AppData/$AppID/meilisearch:/meili_data
 
