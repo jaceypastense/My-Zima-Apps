@@ -40,7 +40,7 @@ services:
 x-casaos:
   architectures:
     - amd64
-  main: karakeep
+  main: Karakeep
   description:
     en_us: Karakeep (previously Hoarder) is a self-hostable bookmark-everything app with a touch of AI for the data hoarders out there.
   developer: Mohamed Bassem
