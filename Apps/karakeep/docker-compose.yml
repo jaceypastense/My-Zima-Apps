@@ -5,22 +5,13 @@ services:
     image: ghcr.io/karakeep-app/karakeep:0.30.0
     restart: unless-stopped
     volumes:
-      # By default, the data is stored in a docker volume called "data".
-      # If you want to mount a custom directory, change the volume mapping to:
-      # - /path/to/your/directory:/data
       - /DATA/AppData/$AppID/data:/data
     ports:
       - 3180:3000
-#    env_file:
-#      - .env
     environment:
       MEILI_ADDR: http://meilisearch:7700
       BROWSER_WEB_URL: http://chrome:9222
-      # OPENAI_API_KEY: ...
- 
-      # You almost never want to change the value of the DATA_DIR variable.
-      # If you want to mount a custom directory, change the volume mapping above instead.
-#      DATA_DIR: /data # DON'T CHANGE THIS
+
   chrome:
     image: gcr.io/zenika-hub/alpine-chrome:123
     restart: unless-stopped
@@ -36,9 +27,7 @@ services:
     restart: unless-stopped
     environment:
       - MEILI_NO_ANALYTICS: "true"
-      - MEILI_MASTER_KEY=jgIvD2Sd4VgpCxolfga2ZCsS5q+1RDVyozQ3pCAVLwc+Zl0/
-      - NEXTAUTH_URL=http://localhost:3180
-      - NEXTAUTH_SECRET=Rbsll++/8nzwzx2OucNTVG7a5lg8DQIqMdi9o97bLRhN7g7Y
+
     volumes:
       - /DATA/AppData/$AppID/meilisearch:/meili_data
 
@@ -56,10 +45,6 @@ x-casaos:
   # Icon URL for the application
   icon: https://github.com/homarr-labs/dashboard-icons/blob/main/png/karakeep.png
   thumbnail: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/karakeep.png
-  
-  # Thumbnail image for the application (if any)
-
-  # Title for the application
   title:
     en_us: Karakeep
   # Category under which the application falls
