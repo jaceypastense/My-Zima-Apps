@@ -60,7 +60,7 @@ x-casaos:
   thumbnail: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/karakeep.png
   
   # Thumbnail image for the application (if any)
-  thumbnail: ""
+
   # Title for the application
   title:
     en_us: Karakeep
