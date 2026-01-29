@@ -56,7 +56,7 @@ x-casaos:
   developer: Mohamed Bassem
   
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/karakeep.png
+  icon: https://github.com/homarr-labs/dashboard-icons/blob/main/png/karakeep.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
