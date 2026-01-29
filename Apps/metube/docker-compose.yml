@@ -31,3 +31,5 @@ x-casaos:
     en_us: Metube
   category: Personal Apps
   port_map: '8081'
+  tagline:
+    en_us: Download videos on Youtube!
