@@ -1,7 +1,7 @@
 name: karakeep
  
 services:
-  web:
+  karakeep:
     image: ghcr.io/karakeep-app/karakeep:release
     restart: unless-stopped
     volumes:
