@@ -11,8 +11,8 @@ services:
       - /DATA/AppData/$AppID/data:/data
     ports:
       - 3180:3000
-    env_file:
-      - .env
+#    env_file:
+#      - .env
     environment:
       MEILI_ADDR: http://meilisearch:7700
       BROWSER_WEB_URL: http://chrome:9222
@@ -20,7 +20,7 @@ services:
  
       # You almost never want to change the value of the DATA_DIR variable.
       # If you want to mount a custom directory, change the volume mapping above instead.
-      DATA_DIR: /data # DON'T CHANGE THIS
+#      DATA_DIR: /data # DON'T CHANGE THIS
   chrome:
     image: gcr.io/zenika-hub/alpine-chrome:123
     restart: unless-stopped
@@ -34,13 +34,13 @@ services:
   meilisearch:
     image: getmeili/meilisearch:v1.13.3
     restart: unless-stopped
-    env_file:
-      - .env
+#    env_file:
+#      - .env
     environment:
       MEILI_NO_ANALYTICS: "true"
-      MEILI_MASTER_KEY=jgIvD2Sd4VgpCxolfga2ZCsS5q+1RDVyozQ3pCAVLwc+Zl0/
-      NEXTAUTH_URL=http://localhost:3180
-      NEXTAUTH_SECRET=Rbsll++/8nzwzx2OucNTVG7a5lg8DQIqMdi9o97bLRhN7g7Y
+#      MEILI_MASTER_KEY=jgIvD2Sd4VgpCxolfga2ZCsS5q+1RDVyozQ3pCAVLwc+Zl0/
+#      NEXTAUTH_URL=http://localhost:3180
+#      NEXTAUTH_SECRET=Rbsll++/8nzwzx2OucNTVG7a5lg8DQIqMdi9o97bLRhN7g7Y
     volumes:
       - /DATA/AppData/$AppID/meilisearch:/meili_data
 
