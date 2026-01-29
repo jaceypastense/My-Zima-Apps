@@ -34,13 +34,11 @@ services:
   meilisearch:
     image: getmeili/meilisearch:v1.13.3
     restart: unless-stopped
-#    env_file:
-#      - .env
     environment:
-      MEILI_NO_ANALYTICS: "true"
-#      MEILI_MASTER_KEY=jgIvD2Sd4VgpCxolfga2ZCsS5q+1RDVyozQ3pCAVLwc+Zl0/
-#      NEXTAUTH_URL=http://localhost:3180
-#      NEXTAUTH_SECRET=Rbsll++/8nzwzx2OucNTVG7a5lg8DQIqMdi9o97bLRhN7g7Y
+      - MEILI_NO_ANALYTICS: "true"
+      - MEILI_MASTER_KEY=jgIvD2Sd4VgpCxolfga2ZCsS5q+1RDVyozQ3pCAVLwc+Zl0/
+      - NEXTAUTH_URL=http://localhost:3180
+      - NEXTAUTH_SECRET=Rbsll++/8nzwzx2OucNTVG7a5lg8DQIqMdi9o97bLRhN7g7Y
     volumes:
       - /DATA/AppData/$AppID/meilisearch:/meili_data
 
