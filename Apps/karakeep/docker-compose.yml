@@ -1,4 +1,5 @@
-name: karakeep
+version: "3.8"
+ 
 services:
   web:
     image: ghcr.io/karakeep-app/karakeep:${KARAKEEP_VERSION:-release}
@@ -9,19 +10,19 @@ services:
       # - /path/to/your/directory:/data
       - /DATA/AppData/$AppID/data:/data
     ports:
-      - 3180:3000
-    # env_file:
+      - 3000:3000
+    env_file:
       - .env
     environment:
       MEILI_ADDR: http://meilisearch:7700
       BROWSER_WEB_URL: http://chrome:9222
       # OPENAI_API_KEY: ...
-
+ 
       # You almost never want to change the value of the DATA_DIR variable.
       # If you want to mount a custom directory, change the volume mapping above instead.
       DATA_DIR: /data # DON'T CHANGE THIS
   chrome:
-    image: gcr.io/zenika-hub/alpine-chrome:124
+    image: gcr.io/zenika-hub/alpine-chrome:123
     restart: unless-stopped
     command:
       - --no-sandbox
@@ -33,20 +34,15 @@ services:
   meilisearch:
     image: getmeili/meilisearch:v1.13.3
     restart: unless-stopped
-    #env_file:
-    #  - .env
+    env_file:
+      - .env
     environment:
       MEILI_NO_ANALYTICS: "true"
-      MEILI_ADDR=http://127.0.0.1:7700
       MEILI_MASTER_KEY=[generate with <openssl rand -base64 36 | tr -dc 'A-Za-z0-9'>]
       NEXTAUTH_URL=http://localhost:3180
       NEXTAUTH_SECRET=[generate with <openssl rand -base64 36>]
     volumes:
       - /DATA/AppData/$AppID/meilisearch:/meili_data
-
-#volumes:
-#  meilisearch:
-#  data:
 
 
 # CASAOS ENVIRONMENT VARIABLES AND METADATA     
