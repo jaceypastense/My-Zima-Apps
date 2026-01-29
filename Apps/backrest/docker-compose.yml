@@ -38,7 +38,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://github.com/jaceypastense/My-Zima-Apps/blob/main/icons/backrest.png
   # Thumbnail image for the application (if any)
-  thumbnail: ""
+  thumbnail: https://github.com/jaceypastense/My-Zima-Apps/blob/main/icons/backrest.png
   # Title for the application
   title:
     en_us: backrest
