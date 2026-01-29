@@ -30,7 +30,7 @@ x-casaos:
   main: drawio
   description:
     en_us: draw.io is a whiteboarding / diagramming software application..
-  developer: Mohamed Bassem
+  developer: David Benson
   
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/draw-io.png
