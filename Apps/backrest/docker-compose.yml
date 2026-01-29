@@ -36,9 +36,9 @@ x-casaos:
   developer: Gareth
   
   # Icon URL for the application
-  icon: https://github.com/jaceypastense/My-Zima-Apps/blob/main/icons/backrest.png
+  icon: https://github.com/jaceypastense/My-Zima-Apps/blob/main/Apps/backrest/icon.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://github.com/jaceypastense/My-Zima-Apps/blob/main/icons/backrest.png
+  thumbnail: https://github.com/jaceypastense/My-Zima-Apps/blob/main/Apps/backrest/icon.png
   # Title for the application
   title:
     en_us: Backrest
