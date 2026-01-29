@@ -57,6 +57,7 @@ x-casaos:
   
   # Icon URL for the application
   icon: https://github.com/homarr-labs/dashboard-icons/blob/main/png/karakeep.png
+  thumbnail: https://github.com/homarr-labs/dashboard-icons/blob/main/png/karakeep.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
