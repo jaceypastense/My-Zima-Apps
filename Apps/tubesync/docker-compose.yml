@@ -38,5 +38,5 @@ x-casaos:
   title:
     en_us: tubesync
   # Category under which the application falls
-  category: Downloader
+  category: Personal Apps
   port_map: '4848'
